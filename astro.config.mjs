@@ -37,4 +37,5 @@ export default defineConfig({
 			],
 		}),
 	],
+	site: 'https://docs.smartshub.dev',
 });
