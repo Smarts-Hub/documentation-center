@@ -37,7 +37,7 @@ This is the default structure of a module.
 
 ### `metadata.json`
 The metadata.json contains the main information of the bot, such as the `author`, `name`, `version` or `mainfile`.
-```json
+```json title="metadata.json"
 {
     "name": "example",
     "version": "0",
@@ -48,7 +48,7 @@ The metadata.json contains the main information of the bot, such as the `author`
 
 ### `index.js` (main)
 This file can be named as `index.js`, `main.js`, etc. It contains the `run` function, wich will be called once when starting the module
-```js
+```js title="index.js"
 export async function run(moduleApi) {
     // Any code here will be ran once when the bot loads the module
 }
@@ -58,7 +58,7 @@ export async function run(moduleApi) {
 The bot will only read commands if they are on this directory. 
 
 **This is the default command structure**
-```js
+```js title="commands/ping.js"
 import { SlashCommandBuilder } from 'discord.js';
 
 export default {
@@ -77,7 +77,7 @@ export default {
 The bot will only read events if they are on this directory.
 
 **This is a default event structure**
-```js
+```js title="events/message.js"
 import { Events } from "discord.js";
 
 export default {

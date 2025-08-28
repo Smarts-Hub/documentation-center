@@ -12,7 +12,7 @@ To create a bot application, refer to [this Discord.py guide](https://discordpy.
 
 The `config.json` file contains all global configuration options for your bot. Below is a sample default configuration:
 
-```json
+```json title="config.json"
 {
     "token": "",
     "clientId": "",
