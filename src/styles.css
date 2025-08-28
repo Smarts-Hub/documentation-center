@@ -1,0 +1,58 @@
+/* Theme modification for SmartsHub by jallox*/
+
+@font-face {
+	font-family: "GoogleSansCode";
+	src: url("/font/GoogleSansCode-Regular.ttf");
+}
+
+/* Dark mode colors. */
+:root {
+	--sl-color-accent-low: #13434f;
+	--sl-color-accent: #34d0ff;
+	--sl-color-accent-high: #00c3ff;
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #eceef2;
+	--sl-color-gray-2: #c0c2c7;
+	--sl-color-gray-3: #888b96;
+	--sl-color-gray-4: #545861;
+	--sl-color-gray-5: #353841;
+	--sl-color-gray-6: #24272f;
+	--sl-color-black: #17181c;
+}
+/* Light mode colors. */
+:root[data-theme='light'] {
+	--sl-color-accent-low: #00c3ff;
+	--sl-color-accent: #34d0ff;
+	--sl-color-accent-high:#13434f;
+	--sl-color-white: #17181c;
+	--sl-color-gray-1: #24272f;
+	--sl-color-gray-2: #353841;
+	--sl-color-gray-3: #545861;
+	--sl-color-gray-4: #888b96;
+	--sl-color-gray-5: #c0c2c7;
+	--sl-color-gray-6: #eceef2;
+	--sl-color-gray-7: #f5f6f8;
+	--sl-color-black: #ffffff;
+}
+
+.sl-link-button {
+	transition: all 0.3s;
+}
+
+.sl-link-button:hover { 
+	background: var(--sl-color-accent);
+	border-color: var(--sl-color-accent);
+}
+
+.smartshub {
+	color: var(--sl-color-accent);
+	font-weight: extrabold;
+}
+
+.code {
+	font-family: "GoogleSansCode";
+}
+
+.auto {
+	font-family: "GoogleSansCode";
+}

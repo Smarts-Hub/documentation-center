@@ -7,6 +7,9 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'SmartsHub Documentation',
+			customCss: [
+            './src/styles.css',
+      		],
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/Smarts-Hub/' },
 				{ icon: 'discord', label: 'Discord', href: 'https://discord.smartshub.dev/' },],
