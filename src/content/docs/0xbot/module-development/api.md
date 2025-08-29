@@ -30,25 +30,30 @@ This configuration is automatically created into the `/config` directory
 ## `api.moduleList`
 An Array containing the name of all the modules successfully loaded.
 
-## `api.installPackage(packageName: string, autorestart: boolean)`
+## `api.installPackage(packageName: string)`
 A method to automatically run the `npm install` command, to install packages required by your module before they are loaded
 
+Returns the installed package
 ```js
 export async function run(api) {
-    // Recommended: To avoid a infinite restart loop, check if the module is already installed!
-    await api.installPackage('js-yaml', true);
+    // This returns the installed package as if imported
+    const yaml = await api.installPackage('js-yaml');
 
     await runAfterModulesInstalled(api); // IMPORTANT `await`
 }
 
 async function runAfterModulesInstalled(api) {
+    // Optional. you can use this in any other file, to import the module
     const yaml = import('js-yaml');
     // Other code goes here
 }
+
+// Note: the default import  `import module from "package";` won't work most of the time
 ```
 
+
 ## `api.restart()`
-A method to automatically restart the NodeJS process
+A method to automatically restart the NodeJS process. **Not supported in some environments**
 
 ```js
 export async function run(api) {
