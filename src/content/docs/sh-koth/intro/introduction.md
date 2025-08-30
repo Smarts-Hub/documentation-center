@@ -1,8 +1,7 @@
 ---
 title: SH-Koth documentation
+description: _Simple to use, powerful in action. A smarter KOTH solution._
 ---
-_Simple to use, powerful in action. A smarter KOTH solution._
-
 # Introduction
 Welcome to the **SH-Koth** documentation.
 
