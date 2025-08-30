@@ -38,7 +38,19 @@ export default defineConfig({
 						{ label: 'API', slug: 'fancy-glow/api' },
 						{ label: 'FAQ', slug: 'fancy-glow/faq' }
 					],
-				}
+				},
+                {
+                    label: 'SH-Koth',
+                    items: [
+                        { label: 'Introduction', slug: 'sh-koth/intro/introduction' },
+                        { label: 'Installation', slug: 'sh-koth/intro/installation' },
+                        { label: 'How to', slug: 'sh-koth/config/how-to' },
+                        { label: 'Hooks', slug: 'sh-koth/config/hooks' },
+                        { label: 'Placeholders', slug: 'sh-koth/config/placeholders' },
+                        { label: 'Commands', slug: 'sh-koth/config/commands' },
+                        { label: 'API', slug: 'sh-koth/api/getting-started' },
+                    ],
+                }
 			],
 		}),
 	],
