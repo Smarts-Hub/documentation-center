@@ -1,5 +1,6 @@
 ---
 title: SH-Koth Hooks
+description: How to integrate SH-Koth with other plugins.
 ---
 
 # Clans or Team:

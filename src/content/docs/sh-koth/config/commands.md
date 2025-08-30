@@ -1,5 +1,6 @@
 ---
 title: Command list
+description: List of all commands available in SH-Koth.
 ---
 
 # Team commands

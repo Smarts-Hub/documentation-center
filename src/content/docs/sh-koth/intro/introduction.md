@@ -1,6 +1,6 @@
 ---
 title: SH-Koth documentation
-description: _Simple to use, powerful in action. A smarter KOTH solution._
+description: Documentation for SH-Koth, a free and open-source KoTH plugin.
 ---
 # Introduction
 Welcome to the **SH-Koth** documentation.

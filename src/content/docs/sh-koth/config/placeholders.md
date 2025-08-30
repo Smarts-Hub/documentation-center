@@ -1,5 +1,6 @@
 ---
 title: Placeholder list
+description: List of all placeholders available in SH-Koth.
 ---
 
 # Format

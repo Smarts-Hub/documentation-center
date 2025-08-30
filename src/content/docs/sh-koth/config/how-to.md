@@ -1,5 +1,6 @@
 ---
 title: How to
+description: How to create and configure koths and customize messages.
 ---
 
 # Koth creation and configuration

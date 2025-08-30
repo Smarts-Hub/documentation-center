@@ -1,5 +1,6 @@
 ---
 title: First steps
+description: How to install and configure SH-Koth.
 ---
 
 # Installation
