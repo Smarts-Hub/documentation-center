@@ -18,6 +18,6 @@ description: How to install and configure SH-Koth.
 
 ## Post-installation
 1. After the first run, navigate to the `plugins/SH-Koth` directory.
-2. Many folders and files will be generated. The folder _configuration_ contains files in order to customize general
-3. settings. For message customization and translation, check the _lang_ folder, _messages.yml_ represent "simple" 
-4. chat messages and _broadcast.yml_ the broadcast messages.
+2. Many folders and files will be generated. The folder _configuration_ contains files in order to customize general 
+settings. For message customization and translation, check the _lang_ folder, _messages.yml_ represent "simple" 
+chat messages and _broadcast.yml_ the broadcast messages.
