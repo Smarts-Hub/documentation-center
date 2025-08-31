@@ -123,8 +123,8 @@ Any text that can be translated or customized is located in the `plugins/SH-Koth
 - `messages.yml`.
 - `broadcast.yml`.
 - `title.yml`.
-- `bossbar.yml`:
-- `sound.yml`:
+- `bossbar.yml`.
+- `sound.yml`.
 - `actionbar.yml`.
 
 SH-Koth texting is based on [MiniMessage](https://docs.adventure.kyori.net/minimessage/), which allows for [rich text formatting](https://docs.advntr.dev/minimessage/format.html).

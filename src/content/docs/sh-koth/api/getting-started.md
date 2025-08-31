@@ -2,5 +2,5 @@
 title: About SH-Koth API
 ---
 :::caution  
-Not yet implemented.
+Working on this section.
 :::
