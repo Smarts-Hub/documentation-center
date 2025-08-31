@@ -30,6 +30,9 @@ This configuration is automatically created into the `/config` directory
 ## `api.moduleList`
 An Array containing the name of all the modules successfully loaded.
 
+## `api.moduleMetadataList`
+An Array containing the JavaScript Object representation of the `metadata.json` for each module
+
 ## `api.installPackage(packageName: string)`
 A method to automatically run the `npm install` command, to install packages required by your module before they are loaded
 
