@@ -115,15 +115,35 @@ scoreboard:
       - "<yellow>Capturing: <gold>%shkoth_<koth_id>_capturing%"
       - "<yellow>Capture Progress: <gold>%shkoth_<koth_id>_progress%"
       - " "
+
 ```
 
 # About lang files
 Any text that can be translated or customized is located in the `plugins/SH-Koth/lang` folder. There are two files:
-- `messages.yml`: contains simple chat messages.
-- `broadcast.yml`: contains broadcast messages, which can include advanced formatting.
+- `messages.yml`.
+- `broadcast.yml`.
+- `title.yml`.
+- `bossbar.yml`:
+- `sound.yml`:
+- `actionbar.yml`.
 
 SH-Koth texting is based on [MiniMessage](https://docs.adventure.kyori.net/minimessage/), which allows for [rich text formatting](https://docs.advntr.dev/minimessage/format.html).
-To avoid sending a message, just replace it with an empty string: `""`.
+To avoid sending a message (or whatever in these files), just replace it with an empty string: `""`.
+
+### Contextual placeholders:
+Placeholders are explained at the [placeholders section](https://docs.smartshub.dev/docs/sh-koth/config/placeholders/), but exists some of them that are contextual,
+meaning that they will only work in certain messages. Their context is explained below:
+- `%shkoth_koth_contextual%`: represents the koth display-name of the koth being referenced in the message.
+- `%shkoth_player_contextual%`: represents the player name being referenced in the message.
+- `%shkoth_team_contextual%`: %shkoth_aux_context% - The auxiliary player's name (other), the third party involved in the message action.
+
+
+:::note
+Don't give too much importance to contextual placeholders, they are just a system we have in the plugin to handle isolated names in a scalable way.
+Just take a good look at what messages they are in and keep in mind that they will be the name of the player who, for example, joins a team, is kicked, etc.; or the name of a koth that has ended, has started to be captured, etc.
+
+These placeholders are required because when the message is sent, several Koths may be running simultaneously, so it would not be possible to have a single placeholder with the name for all of them.
+:::
 
 ```yml
 #  __  __
@@ -274,20 +294,206 @@ koth:
 config-version: 1
 ```
 
+```yml
+#             _   _             _
+#   /\       | | (_)           | |
+#  /  \   ___| |_ _  ___  _ __ | |__   __ _ _ __
+# / /\ \ / __| __| |/ _ \| '_ \| '_ \ / _` | '__|
+# / ____ \ (__| |_| | (_) | | | | |_) | (_| | |
+#/_/    \_\___|\__|_|\___/|_| |_|_.__/ \__,_|_|
+#
+# Actionbar and subtitle configuration file
+# * Formatting: MiniMessage (https://docs.advntr.dev/minimessage/format)
+# * PlaceholderAPI is supported in every message
+# * If you want to disable the action-bar, simply replace titles with empty: ""
+# Support: https://discord.smartshub.dev/
+# Documentation: https://docs.smartshub.dev/sh-koth/intro/introduction/
 
-### Contextual placeholders:
-Placeholders are explained at the [placeholders section](https://docs.smartshub.dev/docs/sh-koth/config/placeholders/), but exists some of them that are contextual,
-meaning that they will only work in certain messages. Their context is explained below:
-- `%shkoth_koth_contextual%`: represents the koth display-name of the koth being referenced in the message.
-- `%shkoth_player_contextual%`: represents the player name being referenced in the message.
-- `%shkoth_team_contextual%`: %shkoth_aux_context% - The auxiliary player's name (other), the third party involved in the message action.
+koth:
+  start: "<green>The KOTH %shkoth_koth_context% has started!"
+  end: "<red>The KOTH %shkoth_koth_context% has ended!"
+  end-by-timeout: "<red>The KOTH %shkoth_koth_context% has ended!"
+  start-capturing: "<red>The KOTH %shkoth_koth_context% has ended!"
+  stop-capturing: "<red>The KOTH %shkoth_koth_context% capture has been stopped!"
+  enter: "<green>You have entered the KOTH %shkoth_koth_context%."
+  leave: "<red>You have left the KOTH %shkoth_koth_context%."
+
+team:
+  created: "<green>Team created successfully."
+  disband: "<red>The team has been dissolved by %shkoth_player_context%"
+  kicked: "<red>You have been kicked from your team."
+  member-kicked: "<green>%shkoth_player_context% has been kicked from your team."
+  removed: "<red>You have been removed from your team."
+  member-removed: "<green>%shkoth_player_context% has been removed from your team."
+  new-leader: "<light_purple>You have changed the team leader. The new one is %shkoth_player_context%."
+  added-to-team: "<green>You have been added to a team."
+  new-member-joined: "<green>%shkoth_player_context% has joined your team."
 
 
-:::note
-Don't give too much importance to contextual placeholders, they are just a system we have in the plugin to handle isolated names in a scalable way.
-Just take a good look at what messages they are in and keep in mind that they will be the name of the player who, for example, joins a team, is kicked, etc.; or the name of a koth that has ended, has started to be captured, etc.
+# DO NOT TOUCH THIS!
+config-version: 1
+```
 
-These placeholders are required because when the message is sent, several Koths may be running simultaneously, so it would not be possible to have a single placeholder with the name for all of them.
-:::
+```yml
+#____                _
+#|  _ \              | |
+#| |_) | ___  ___ ___| |__   __ _ _ __
+#|  _ < / _ \/ __/ __| '_ \ / _` | '__|
+#| |_) | (_) \__ \__ \ |_) | (_| | |
+#|____/ \___/|___/___/_.__/ \__,_|_|
+#
+# Bossbar configuration file
+# * Formatting: MiniMessage (https://docs.advntr.dev/minimessage/format)
+# * PlaceholderAPI is supported in every message
+# * If you want to disable the boss-bar, simply replace titles with empty: ""
+# Support: https://discord.smartshub.dev/
+# Documentation: https://docs.smartshub.dev/sh-koth/intro/introduction/
+
+
+# Displayed when a player is capturing the KOTH
+capturing-title: "<red>Capturing koth!"
+
+# While no one is capturing the KOTH
+waiting-title: "<green>No one is capturing!"
+
+# Player scope for the boss-bar
+# Available options:
+# * "all" (whole server players)
+# * "world" (players at koth's world)
+# * "area" (only players inside the koth area)
+player-scope: "world"
+
+# Boss-bar colors
+# Options:
+# * "auto" (change by progress: 0-30% red, 30-70% yellow, 70-100% red)
+# * "red"
+# * "green"
+# * "blue"
+# * "yellow"
+# * "pink"
+# * "purple"
+# * "white"
+color-by-progress: "auto"
+
+
+
+# DO NOT TOUCH THIS!
+config-version: 1
+```
+
+```yml
+#  _____                       _
+# / ____|                     | |
+#| (___   ___  _   _ _ __   __| |
+# \___ \ / _ \| | | | '_ \ / _` |
+# ____) | (_) | |_| | | | | (_| |
+#|_____/ \___/ \__,_|_| |_|\__,_|
+#
+# Sound configuration file
+# * PlaceholderAPI is supported in every message
+# * If you want to disable the sound, simply replace titles with empty: ""
+# * Sound list: https://minecraftsounds.com/
+# Support: https://discord.smartshub.dev/
+# Documentation: https://docs.smartshub.dev/sh-koth/intro/introduction/
+
+koth:
+  start: "minecraft:entity.experience_orb.pickup"
+  end: "minecraft:block.note_block.bass"
+  end-by-timeout: "minecraft:block.note_block.bass"
+  start-capturing: "minecraft:entity.player.levelup"
+  stop-capturing: "minecraft:block.note_block.bass"
+  enter: "minecraft:entity.villager.yes"
+  leave: "minecraft:block.note_block.bass"
+
+team:
+  created: "minecraft:entity.experience_orb.pickup"
+  disband: "minecraft:block.note_block.bass"
+  kicked: "minecraft:block.note_block.bass"
+  member-kicked: "minecraft:entity.player.levelup"
+  removed: "minecraft:block.note_block.bass"
+  member-removed: "minecraft:block.note_block.bass"
+  new-leader: "minecraft:entity.experience_orb.pickup"
+  added-to-team: "minecraft:entity.player.levelup"
+  new-member-joined: "minecraft:entity.villager.yes"
+
+
+# DO NOT TOUCH THIS!
+config-version: 1
+```
+
+
+```yml
+# _______ _ _   _
+#|__   __(_) | | |
+#   | |   _| |_| | ___
+#   | |  | | __| |/ _ \
+#   | |  | | |_| |  __/
+#   |_|  |_|\__|_|\___|
+#
+# Title and subtitle configuration file
+# * Formatting: MiniMessage (https://docs.advntr.dev/minimessage/format)
+# * PlaceholderAPI is supported in every message
+# * If you want to disable the boss-bar, simply replace titles with empty: ""
+# Support: https://discord.smartshub.dev/
+# Documentation: https://docs.smartshub.dev/sh-koth/intro/introduction/
+
+koth:
+  start:
+    title: "<green>The KOTH %shkoth_koth_context% has started!"
+    subtitle: "<yellow>Capture the KOTH to win amazing rewards!"
+  end:
+    title: "<red>The KOTH %shkoth_koth_context% has ended!"
+    subtitle: "<light_purple>Congratulations to the winners!"
+  end-by-timeout:
+    title: "<red>The KOTH %shkoth_koth_context% has ended!"
+    subtitle: "<light_purple>Nobody captured it in time!"
+  start-capturing:
+    title: "<green>The KOTH %shkoth_koth_context% is being captured by %shkoth_player_contextual%!"
+    subtitle: "<green>Try to reclaim it before it's too late!"
+  stop-capturing:
+    title: "<red>The KOTH %shkoth_koth_context% capture has been stopped!"
+    subtitle: "<blue>The battle continues!"
+  enter:
+    title: "<green>You have entered the KOTH %shkoth_koth_context%."
+    subtitle: ""
+  leave:
+    title: "<red>You have left the KOTH %shkoth_koth_context%."
+    subtitle: ""
+
+team:
+  created:
+    title: "<green>Team created successfully."
+    subtitle: ""
+  disband:
+    title: "<red>The team has been dissolved by %shkoth_player_context%"
+    subtitle: ""
+  kicked:
+    title: "<red>You have been kicked from your team."
+    subtitle: ""
+  member-kicked:
+    title: "<green>%shkoth_player_context% has been kicked from your team."
+    subtitle: ""
+  removed:
+    title: "<red>You have been removed from your team."
+    subtitle: ""
+  member-removed:
+    title: "<green>%shkoth_player_context% has been removed from your team."
+    subtitle: ""
+  new-leader:
+    title: "<light_purple>You have changed the team leader. The new one is %shkoth_player_context%."
+    subtitle: ""
+  added-to-team:
+    title: "<green>You have been added to a team."
+    subtitle: ""
+  new-member-joined:
+    title: "<green>%shkoth_player_context% has joined your team."
+    subtitle: ""
+
+
+# DO NOT TOUCH THIS!
+config-version: 1
+```
+
+
 
 

@@ -22,6 +22,7 @@ The main purpose of SH-Koth is to offer a reliable and efficient solution for ho
 - **Event Scheduling**: schedule events to occur at specific times or intervals.
 - **Infinite KoTHs** : create as many KoTH events as you want, without any limitations. Including the ability to have multiple
     events running at the same time.
+- **Flawless feedback**: fully customizable messages, actionbars, broadcast, boss-bar, titles and sounds to keep players informed and engaged.
 - **Boundless rewards**: provide items (nbt supported), commands per player and to all participants, and more.
 - **Stats tracking**: keep track of player wins, by teams or solo, and display them on leaderboards.
 - **Cross-server:** supports H2 for local databases and MySQL for cross-server setups.
