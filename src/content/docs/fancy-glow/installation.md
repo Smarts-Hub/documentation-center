@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: Understand how to install 0xBot
+description: Learn how to install FancyGlow
 ---
 
 
