@@ -22,11 +22,6 @@ A JSObject that contains the [Discord Client](https://discord.js.org/docs/packag
 ## `api.config`
 A JSObject that contains the JavaScript Object representation of the `config.json` of the bot.
 
-## `api.resourceConfig`
-A JSObject that contains the JavaScript Object representation of the custom configuration json file. 
-
-This configuration is automatically created into the `/config` directory
-
 ## `api.moduleList`
 An Array containing the name of all the modules successfully loaded.
 
