@@ -20,6 +20,7 @@ you should hide these commands.
 # Koth commands
 All of these commands require the `shkoth.admin` permission to use.
 
+- `/koth create`: open a GUI to create a new koth.
 - `/koth force-start <koth>`: force start a koth.
 - `/koth force-stop <koth>`: force stop a koth.
 - `/koth force-stop all`: force stop all running koths.
