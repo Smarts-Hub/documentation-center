@@ -57,3 +57,4 @@ A method to automatically restart the NodeJS process. **Not supported in some en
 export async function run(api) {
     api.restart();
 }
+```
