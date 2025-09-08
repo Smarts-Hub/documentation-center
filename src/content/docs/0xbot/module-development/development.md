@@ -55,7 +55,7 @@ export async function run(moduleApi) {
 ```
 
 ### `/commands/`
-The bot will only read commands if they are on this directory. 
+The bot will only read commands if they are on this directory. You can use any method in the `SlashCommandBuilder`. Refer to the [DiscordJS guide](https://discord.js.org/docs/packages/discord.js/14.22.1/SlashCommandBuilder:Class) for more information.
 
 **This is the default command structure**
 ```js title="commands/ping.js"
@@ -74,7 +74,7 @@ export default {
 ```
 
 ### `/events/`
-The bot will only read events if they are on this directory.
+The bot will only read events if they are on this directory. This bot accepts any [DiscordJS event](https://discord.js.org/docs/packages/discord.js/14.22.1/Events:Enum)
 
 **This is a default event structure**
 ```js title="events/message.js"
