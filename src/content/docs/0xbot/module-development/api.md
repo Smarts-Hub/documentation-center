@@ -3,7 +3,14 @@ title: API Documentatio
 ---
 Through the api you are able to interact with the bot in order to make your customizations. This api offers several functions, variables or objects you can use
 
+:::tip
+Instead of importing and exporting the api from the main file, you can **directly import the modules** who provides that functionality. 
+The modules that supports directly import, are named below
+:::
+
 ## `api.logger`
+Exported by `/core/logger.js`
+
 Exposes the loggin system methods, such as `warn`, `info`, `debug`, `success` and `error`
 
 ```js
@@ -17,6 +24,8 @@ export async function run(api) {
 ```
 
 ## `api.client`
+Exported by `/core/bot/client.js`
+
 A JSObject that contains the [Discord Client](https://discord.js.org/docs/packages/discord.js/14.22.1/Client:Class) object
 
 ## `api.config`
@@ -29,6 +38,8 @@ An Array containing the name of all the modules successfully loaded.
 An Array containing the JavaScript Object representation of the `metadata.json` for each module
 
 ## `api.installPackage(packageName: string)`
+Exported by `/core/modules/installer.js`
+
 A method to automatically run the `npm install` command, to install packages required by your module before they are loaded
 
 Returns the installed package
@@ -48,9 +59,16 @@ async function runAfterModulesInstalled(api) {
 
 // Note: the default import  `import module from "package";` won't work most of the time
 ```
+:::caution
+**We do not recommend** using this method, since may break other packages. Anyways, we offer it as a fallback if any module can't be found, and it is essential.
+
+**We recommend** to force the final user to run `npm install <package>` instead of using this method.
+:::
 
 
 ## `api.restart()`
+Exported by `/core/modules/restarter.js`
+
 A method to automatically restart the NodeJS process. **Not supported in some environments**
 
 ```js
@@ -58,3 +76,6 @@ export async function run(api) {
     api.restart();
 }
 ```
+:::caution
+This method is **not tested** in many environments, such as `Docker` or `Windows`.
+:::
