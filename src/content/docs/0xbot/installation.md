@@ -19,12 +19,24 @@ The `config.json` file contains all global configuration options for your bot. B
     "guildId": "",
     "logger": {
         "enable_debug": false
+    },
+    "storage": {
+        "enabled": false,
+        "mongodb": "mongodb://localhost/database"   
     }
 }
 ```
 
 Fill in each value for the bot to function correctly.
 
+:::caution
+You can disable the `storage` by setting `storage.enabled` to `false`, but if any module requires it, it will throw an error.
+
+Before contacting us to support, please check if you have enabled storage. If the problem persists, contact us via Discord Ticket.
+:::
+:::tip
+To get a Mongodb database, you can use their official [MongoDB Atlas Cloud](https://www.mongodb.com/products/platform/atlas-database). They offer a **free 500MB** plan, and other cheap plans with higher storage.
+:::
 ### Token
 
 Your bot's token is required to connect to the Discord API and appear online. Obtain your token from the Discord developer portal and enter it here. For details, see step 7 in the [Discord.py guide](https://discordpy.readthedocs.io/en/stable/discord.html).
