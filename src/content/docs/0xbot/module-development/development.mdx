@@ -1,6 +1,8 @@
 ---
 title: Module Development
 ---
+import { FileTree } from '@astrojs/starlight/components';
+
 
 # Overview
 By developing your own modules you are able to add custom features to your discord bot with ease. 
@@ -21,18 +23,17 @@ export async function run(moduleApi) {
 
 ## Module example structure.
 
-```
-modules
-   └── example
-       ├── commands
-       │   └── exampleCommand.js
-       ├── events
-       │   └── exampleEvent.js
-       ├── index.js
-       ├── config.json
-       └── metadata.json
-```
-
+<FileTree>
+- modules
+	- example
+		- commands
+			- exampleCommand.js
+		- events
+			- exampleEvent.js
+		- index.js
+		- config.json/yml
+		- metadata.json
+</FileTree>
 This is the default structure of a module.
 
 ### `metadata.json`
