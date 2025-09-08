@@ -50,6 +50,13 @@ export default defineConfig({
                         { label: 'Commands', slug: 'sh-koth/config/commands' },
                         { label: 'API', slug: 'sh-koth/api/getting-started' },
                     ],
+                },
+                {
+                    label: 'FLoating-Heads',
+                    items: [
+                        { label: 'Introduction', slug: 'floating-heads/introduction' },
+                        { label: 'Installation', slug: 'floating-heads/installation' }
+                    ],
                 }
 			],
 		}),

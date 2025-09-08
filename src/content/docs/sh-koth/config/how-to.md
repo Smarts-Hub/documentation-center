@@ -8,7 +8,12 @@ description: How to create and configure koths and customize messages.
 Koths are representated by a `.yml` file located in the `plugins/SH-Koth/koths` folder.
 
 ### Creating a Koth
-In order to define a koth, you will need to create a new `.yml` file in the `plugins/SH-Koth/koths` folder.
+
+There are two ways to create a koth:
+
+Firstly, you can perform the `/koth create` command, that will display a gui to interactively create a koth supplying the required information.
+
+Secondly, to define a koth, you can create a new `.yml` file in the `plugins/SH-Koth/koths` folder.
 Then, you must paste the template provided inside `koth-template.yml` file, located in the same folder. Adjust parameters by
 your own needs. Finally, reload plugin using `/koth reload` command or restart your server.
 
