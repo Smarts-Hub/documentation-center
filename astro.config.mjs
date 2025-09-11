@@ -23,6 +23,7 @@ export default defineConfig({
 						{ label: 'Module installation', slug: '0xbot/moduleinstallation' },
 						{ label: 'Module development', items: [
 							{ label: 'Module development', slug: '0xbot/module-development/development' },
+							{ label: 'TS module development', slug: '0xbot/module-development/typescript' },
 							{ label: 'Module API', slug: '0xbot/module-development/api' },
 							{ label: 'Module development guidelines', slug: '0xbot/module-development/guidelines' },
 							

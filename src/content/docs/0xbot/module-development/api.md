@@ -4,12 +4,21 @@ title: API Documentatio
 Through the api you are able to interact with the bot in order to make your customizations. This api offers several functions, variables or objects you can use
 
 :::tip
-Instead of importing and exporting the api from the main file, you can **directly import the modules** who provides that functionality. 
+Instead of importing and exporting the api from the main file, you can **directly import the modules** who provides that functionality. Here is an example:
+
+```js 
+
+import logger from "#logger";
+
+logger.info("Imported directly from module");
+
+```
+
 The modules that supports directly import, are named below
 :::
 
 ## `api.logger`
-Exported by `/core/logger.js`
+Exported by `/core/logger.js`, import with `#logger`
 
 Exposes the loggin system methods, such as `warn`, `info`, `debug`, `success` and `error`
 
@@ -24,7 +33,7 @@ export async function run(api) {
 ```
 
 ## `api.client`
-Exported by `/core/bot/client.js`
+Exported by `/core/bot/client.js`, import with `#client`
 
 A JSObject that contains the [Discord Client](https://discord.js.org/docs/packages/discord.js/14.22.1/Client:Class) object
 
@@ -38,7 +47,7 @@ An Array containing the name of all the modules successfully loaded.
 An Array containing the JavaScript Object representation of the `metadata.json` for each module
 
 ## `api.installPackage(packageName: string)`
-Exported by `/core/modules/installer.js`
+Exported by `/core/modules/installer.js`, 
 
 A method to automatically run the `npm install` command, to install packages required by your module before they are loaded
 
@@ -67,7 +76,7 @@ async function runAfterModulesInstalled(api) {
 
 
 ## `api.restart()`
-Exported by `/core/modules/restarter.js`
+Exported by `/core/modules/restarter.js`, use with `#api`
 
 A method to automatically restart the NodeJS process. **Not supported in some environments**
 
