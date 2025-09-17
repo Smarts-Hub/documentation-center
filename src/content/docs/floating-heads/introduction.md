@@ -5,7 +5,6 @@ title: Floating-Heads documentation
 # Introduction
 Welcome to the **Floating-Heads** documentation.
 
-
 ## What is Floating-Heads
 Floating-Heads is a packet-based npc alternative, eula-friendly way to ehnance your server, by giving you the ability to add fancy heads floating around!
 
