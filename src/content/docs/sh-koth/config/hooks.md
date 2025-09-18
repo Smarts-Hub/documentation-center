@@ -36,11 +36,19 @@ opening an issue on GitHub or on our Discord.
 #
 # Hook Clans/Teams configuration file
 # Support: https://discord.smartshub.dev/
+# Documentation: https://docs.smartshub.dev/sh-koth/intro/introduction/
 
 # You can enable/disable support for each plugin and set their priority.
 # The priority is used when more than one plugin is detected, the one with the highest priority will be used.
 # If two or more plugins have the same priority, the one that appears first
 # Also know that SH-Koth owns a Team system, so if no plugin is detected or enabled, it will use its own system.
+superior-skyblock-2:
+  enabled: true
+  priority: 8
+
+bento-box:
+  enabled: true
+  priority: 7
 
 ultimate-clans:
   enabled: true
@@ -68,5 +76,5 @@ simple-clans:
 
 
 # DO NOT TOUCH THIS!
-config-version: 1
+config-version: 2
 ```
