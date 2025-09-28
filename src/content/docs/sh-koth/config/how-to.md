@@ -74,17 +74,6 @@ create-team-if-not-exists: true
 # This parameter is only relevant if the KoTH is played in team mode, in solo mode it is ignored.
 deny-entry-if-not-in-team: false
 
-# List of schedules for this koth.
-# Each schedule defines a day and time when the KoTH will be active.
-# You can define multiple schedules at same day, but be sure to don't overlap them.
-schedule:
-  '1':
-    day: "monday"
-    hour: "20:00"
-  '2':
-    day: "tuesday"
-    hour: "20:00"
-
 # List of commands to perform at different stages of the KoTH.
 commands-perform:
   # These commands will be executed when the KoTH starts (one time).
@@ -122,6 +111,62 @@ scoreboard:
       - " "
 
 ```
+
+
+## Defining schedules
+You can define schedules for your koths in this configuration file.
+This allows you to automate the start times of your koth events.
+```yml
+#   _____      _              _       _
+#  / ____|    | |            | |     | |
+# | (___   ___| |__   ___  __| |_   _| | ___ _ __ ___
+#  \___ \ / __| '_ \ / _ \/ _` | | | | |/ _ \ '__/ __|
+#  ____) | (__| | | |  __/ (_| | |_| | |  __/ |  \__ \
+# |_____/ \___|_| |_|\___|\__,_|\__,_|_|\___|_|  |___/
+#
+# Schedulers configuration file
+# Support: https://discord.smartshub.dev/
+# Documentation: https://docs.smartshub.dev/sh-koth/intro/introduction/
+
+# server -> local machine time, also supports values like "UTC", "America/New_York", etc.
+# Some values: https://docs.oracle.com/javase/8/docs/api/java/time/ZoneId.html
+time-zone: "server"
+
+# Schedulers use the cron format to define the times when the koths will be started.
+# You can add to the list as many times as you want, with the same or different koths.
+# Cron format: minute hour day-of-month month day-of-week
+# Interactive web to create cron expressions: https://crontab.guru/
+# Examples:
+schedulers:
+  evening_event:
+    times:
+    # Every day at 18:00 and every Friday at 20:30
+      - "0 18 * * *"
+      - "30 20 * * 5"
+
+    # random: if true, only one koth from the list will be chosen randomly
+    # if false, all koths from the list will be started
+    random: false
+
+    # List of koths to start at the specified times (ids defined in koths folder)
+    koths:
+      - "castle"
+      - "fortress"
+
+  # Every day at midnight, one random koth from the list
+  midnight_random:
+    times:
+      - "0 0 * * *"
+    random: true
+    koths:
+      - "example1"
+      - "example2"
+
+config-version: 1
+
+```
+
+
 
 # About lang files
 Any text that can be translated or customized is located in the `plugins/SH-Koth/lang` folder. There are two files:

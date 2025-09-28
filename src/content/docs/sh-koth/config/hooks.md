@@ -42,6 +42,7 @@ opening an issue on GitHub or on our Discord.
 # The priority is used when more than one plugin is detected, the one with the highest priority will be used.
 # If two or more plugins have the same priority, the one that appears first
 # Also know that SH-Koth owns a Team system, so if no plugin is detected or enabled, it will use its own system.
+
 superior-skyblock-2:
   enabled: true
   priority: 8
