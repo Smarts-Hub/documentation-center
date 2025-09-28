@@ -12,6 +12,10 @@ import logger from "#logger";
 
 logger.info("Imported directly from module");
 
+// with api
+import { api } from "#api";
+
+//...
 ```
 
 The modules that supports directly import, are named below
