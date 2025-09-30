@@ -12,6 +12,7 @@ you want to get the value from.
 - `%shkoth_total_wins%`: amount of wins (solo + teams).
 - `%shkoth_solo_wins%`: amount of solo wins.
 - `%shkoth_team_wins%`: amount of team wins.
+- `%shkoth_latest_winner%`: name of the player or team that won the latest koth.
 - `%shkoth_next_koth%`: display name of the next scheduled koth.
 - `%shkoth_next_koth_in%`: seconds until the next scheduled koth.
 - `%shkoth_next_koth_in_formatted%`: formatted time until the next scheduled koth.
@@ -22,6 +23,8 @@ you want to get the value from.
 - `%shkoth_<koth>_next_schedule_formatted%`: formatted time until the koth is scheduled to start.
 - `%shkoth_<koth>_display_name%`: display name of the koth.
 - `%shkoth_<koth>_progress%`: capture percentage progress of the koth.
+- `%shkoth_<koth>_inside%`: true/false if the player is inside the koth region.
+- `%shkoth_<koth>_inside_count%`: return the number of players inside the koth region.
 - `%shkoth_<koth>_id%`: ID of the koth.
 - `%shkoth_<koth>_world%`: world where the koth is located.
 - `%shkoth_<koth>_x%`: x coordinate of the koth
