@@ -42,6 +42,7 @@ opening an issue on GitHub or on our Discord.
 # The priority is used when more than one plugin is detected, the one with the highest priority will be used.
 # If two or more plugins have the same priority, the one that appears first
 # Also know that SH-Koth owns a Team system, so if no plugin is detected or enabled, it will use its own system.
+
 superior-skyblock-2:
   enabled: true
   priority: 8
@@ -78,3 +79,106 @@ simple-clans:
 # DO NOT TOUCH THIS!
 config-version: 2
 ```
+
+
+# Discord WebHooks
+SH-Koth supports Discord webhooks to send notifications about KoTH events directly 
+to your Discord server. This feature allows you to keep your community informed about ongoing 
+events, winners, and other important updates.
+
+To set up Discord webhooks for SH-Koth, you need to configure the `discord-webhooks.yml` file.
+Here, you can define multiple types of notifications.
+
+```yml
+#  _____  _                       _
+# |  __ \(_)                     | |
+# | |  | |_ ___  ___ ___  _ __ __| |
+# | |  | | / __|/ __/ _ \| '__/ _` |
+# | |__| | \__ \ (_| (_) | | | (_| |
+# |_____/|_|___/\___\___/|_|  \__,_|
+#
+# Discord webhook configuration file
+# * PlaceholderAPI is supported in every message!
+# Support: https://discord.smartshub.dev/
+# Documentation: https://docs.smartshub.dev/sh-koth/intro/introduction/
+
+# The link to your Discord webhook
+url: ""
+
+# Webhook messages configuration
+koth-end:
+  enabled: true
+  username: "SH-Koth"
+  author: "SH-Koth"
+  timestamp: true
+  color: 0xFF0000
+  title: "KOTH Ended"
+  description: "The KOTH %shkoth_koth_context% has ended! Congratulations to the winners!"
+  footer: "Powered by SH-Koth"
+
+koth-start:
+  enabled: true
+  username: "SH-Koth"
+  author: "SH-Koth"
+  timestamp: true
+  color: 0xFF0000
+  title: "KOTH Started"
+  description: "The KOTH %shkoth_koth_context% has started! Capture it to win amazing rewards!"
+  footer: "Powered by SH-Koth"
+
+koth-state-change:
+  enabled: false
+  username: "SH-Koth"
+  author: "SH-Koth"
+  timestamp: true
+  color: 0xFF0000
+  title: "KOTH Ended"
+  description: "The KOTH %shkoth_koth_context% has changed the state!"
+  footer: "Powered by SH-Koth"
+
+koth-player-enter:
+  enabled: false
+  username: "SH-Koth"
+  author: "SH-Koth"
+  timestamp: true
+  color: 0xFF0000
+  title: "Player entered to Koth!"
+  description: "%shkoth_player_context% entered to the Koth %shkoth_koth_context%!"
+  footer: "Powered by SH-Koth"
+
+koth-player-leave:
+  enabled: false
+  username: "SH-Koth"
+  author: "SH-Koth"
+  timestamp: true
+  color: 0xFF0000
+  title: "Player leaved the Koth!"
+  description: "%shkoth_player_context% leaved the Koth %shkoth_koth_context%!"
+  footer: "Powered by SH-Koth"
+
+koth-player-start-capture:
+  enabled: true
+  username: "SH-Koth"
+  author: "SH-Koth"
+  timestamp: true
+  color: 0xFF0000
+  title: "Player start capture to the Koth!"
+  description: "%shkoth_player_context% start capture for %shkoth_koth_context%!"
+  footer: "Powered by SH-Koth"
+
+koth-player-stop-capture:
+  enabled: true
+  username: "SH-Koth"
+  author: "SH-Koth"
+  timestamp: true
+  color: 0xFF0000
+  title: "Player stop capture to the Koth!"
+  description: "%shkoth_player_context% stop capturing %shkoth_koth_context%!"
+  footer: "Powered by SH-Koth"
+
+
+# DO NOT TOUCH THIS!
+config-version: 1
+```
+
+
