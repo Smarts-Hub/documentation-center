@@ -53,7 +53,17 @@ export default defineConfig({
                     ],
                 },
                 {
-                    label: 'FLoating-Heads',
+                    label: 'Disasters',
+                    items: [
+                        { label: 'Introduction', slug: 'disasters/intro/introduction' },
+                        { label: 'Installation', slug: 'disasters/intro/installation' },
+                        { label: 'How to', slug: 'disasters/config/how-to' },
+                        { label: 'Placeholders', slug: 'disasters/config/placeholders' },
+                        { label: 'Commands', slug: 'disasters/config/commands' },
+                    ],
+                },
+                {
+                    label: 'Floating-Heads',
                     items: [
                         { label: 'Introduction', slug: 'floating-heads/introduction' },
                         { label: 'Installation', slug: 'floating-heads/installation' }
