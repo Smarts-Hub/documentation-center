@@ -5,12 +5,12 @@ import { FileTree } from '@astrojs/starlight/components';
 
 
 # Overview
-By developing your own modules you are able to add custom features to your discord bot with ease. 
+By developing your own modules you are able to add custom features to your discord bot with ease.
 
 For high-end developers who want to share their creations, it's your lucky day! With 0xBot you can share your modules or even sell it, but you must follow the **0xBot Module developmment guidelines** later on this page.
 
 ## How does the bot load modules
-The bot, has 2 module loading procceses. 
+The bot, has 2 module loading procceses.
 
 1. **Module intializing.** In this stage the bot goes module by module finding their metadata.json, which conatins most of the module's data. This contains also the **index file**, wich must contain and export a `async function run()`, that will be executed once when the module is loaded. Here you are able to get some values, trhough the **module api** provided as an argument to the function.
 ```js
@@ -66,7 +66,7 @@ export default {
 	data: new SlashCommandBuilder()
 		.setName('ping')
 		.setDescription('Responds with pong'),
-		//You can add here as many options as you want 
+		//You can add here as many options as you want
 	async execute(interaction, client) {
 		// Command goes here
         interaction.reply("Pong!");
@@ -104,6 +104,3 @@ The available aliases are:
 :::tip
 Any of the above aliases can be imported from the `#api` alias. See [api](/0xbot/module-development/api/) for more information.
 :::
-
-
-
