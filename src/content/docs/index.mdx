@@ -7,21 +7,22 @@ hero:
   tagline: Search across the documentation of all our resources.
   image:
     file: ../../../public/brand/smartshub.png
-  actions:
-    - text: 0xBot documentation
-      link: /0xbot/introduction/
-      icon: right-arrow
-    - text: FancyGlow documentation
-      link: /fancy-glow/introduction/
-      icon: right-arrow
-    - text: SH-Koth documentation
-      link: /sh-koth/intro/introduction
-      icon: right-arrow
-    - text: Disasters documentation
-      link: /disasters/intro/introduction
-      icon: right-arrow
-    - text: Floating-Heads documentation
-      link: /floating-heads/introduction
-      icon: right-arrow
 ---
+import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
 
+
+
+<Card title="Minecraft Plugins" icon="puzzle">
+- [FancyGlow](/fancy-glow/introduction/)
+- [SH-Koth](/sh-koth/intro/introduction/)
+- [Disasters](/disasters/intro/introduction/)
+- [Floating-Heads](/floating-heads/introduction/)
+</Card>
+<CardGrid>
+  <Card title="Discord bots" icon="discord">
+  - [0xBot](/0xbot/introduction/)
+  </Card>
+  <Card title="0xBot Modules" icon="add-document">
+  - [Tickets](/0xbot/modules/tickets/)
+  </Card>
+</CardGrid>

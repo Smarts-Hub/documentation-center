@@ -28,6 +28,9 @@ export default defineConfig({
 							{ label: 'Module development guidelines', slug: '0xbot/module-development/guidelines' },
 							
 						] },
+						{ label: 'Modules', items: [
+							{ label: 'Tickets', slug: '0xbot/modules/tickets' },
+						]  },
 					],
 				},
 				{
